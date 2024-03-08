@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="603.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerLogin">
+    <children>
+        <ImageView fx:id="Background_Signin" fitHeight="600.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" styleClass="Background">
+            <effect>
+                <BoxBlur height="3.0" iterations="3" width="3.0" />
+            </effect>
+            <image>
+                <Image url="@Image/9bbff9405d65739b75add99dabd47090.jpg" />
+            </image></ImageView>
+        <AnchorPane prefHeight="600.0" prefWidth="200.0">
+            <children>
+                <ImageView fx:id="Logo" fitHeight="111.0" fitWidth="105.0" layoutX="23.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLogo">
+                    <image>
+                        <Image url="@Image/download.png" />
+                    </image></ImageView>
+                <TextField fx:id="EmailTextRegister" layoutX="75.0" layoutY="330.0" prefHeight="33.0" prefWidth="243.0" promptText="Email" styleClass="InputRegister" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-17.0" layoutY="521.0" prefHeight="33.0" prefWidth="275.0" text="Bạn đã có tài khoản?" textFill="WHITE">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="RegisterLabel" layoutX="211.0" layoutY="529.0" onMouseClicked="#signinLabel" prefHeight="20.0" prefWidth="83.0" styleClass="LabelLogin" text="Đăng nhập" textFill="#41cd44">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Label>
+                <Button fx:id="RegisterButton" alignment="CENTER" layoutX="22.0" layoutY="475.0" onAction="#registerevent" prefHeight="33.0" prefWidth="138.0" styleClass="LoginButton" text="Đăng kí" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font></Button>
+                <ImageView fx:id="KeyRegister" fitHeight="40.0" fitWidth="40.0" layoutX="22.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true" styleClass="iconLogin">
+                    <image>
+                        <Image url="@Image/keyLogin.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="EmailRegister" fitHeight="43.0" fitWidth="40.0" layoutX="22.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" styleClass="iconLogin">
+                    <image>
+                        <Image url="@Image/email.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="CloseButton" layoutX="180.0" layoutY="475.0" mnemonicParsing="false" onAction="#closeevent" prefHeight="33.0" prefWidth="138.0" styleClass="LoginButton" text="Thoát" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="15.0" />
+                    </font></Button>
+                <Label layoutX="134.0" layoutY="46.0" prefHeight="66.0" prefWidth="192.0" text="Sachi kids">
+                    <font>
+                        <Font name="Tw Cen MT" size="48.0" />
+                    </font>
+                </Label>
+                <Label layoutX="134.0" layoutY="106.0" prefHeight="17.0" prefWidth="172.0" text="Thời trang trẻ em">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            <ImageView fx:id="PhoneRegister" fitHeight="40.0" fitWidth="40.0" layoutX="22.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/smartphone.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="PhoneTextRegister" layoutX="75.0" layoutY="267.0" prefHeight="33.0" prefWidth="243.0" promptText="Số điện thoại" styleClass="InputRegister" />
+            <ImageView fx:id="NameRegister" fitHeight="40.0" fitWidth="40.0" layoutX="22.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/userLogin.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="NameTextRegister" layoutX="75.0" layoutY="202.0" prefHeight="33.0" prefWidth="243.0" promptText="Họ và tên" styleClass="InputRegister" />
+            <PasswordField fx:id="PasswordTextRegister" layoutX="75.0" layoutY="397.0" prefHeight="33.0" prefWidth="243.0" promptText="Mật khẩu" styleClass="InputRegister" />
+            <Label fx:id="nameerrorlabel" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="238.0" prefHeight="17.0" prefWidth="243.0" styleClass="errorlabel" textFill="RED" />
+            <Label fx:id="phoneerrorlabel" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="303.0" prefHeight="17.0" prefWidth="243.0" styleClass="errorlabel" textFill="RED" />
+            <Label fx:id="emailerrorlabel" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="366.0" prefHeight="17.0" prefWidth="243.0" styleClass="errorlabel" textFill="RED" />
+            <Label fx:id="passworderrorlabel" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="433.0" prefHeight="17.0" prefWidth="243.0" styleClass="errorlabel" textFill="RED" />
+            <Label fx:id="RegisterPass" alignment="CENTER_RIGHT" layoutX="75.0" layoutY="433.0" prefHeight="17.0" prefWidth="243.0" textFill="#0ed000" />
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

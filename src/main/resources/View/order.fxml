@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="order" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="1379.0" styleClass="order" stylesheets="@product.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerOrder">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="11.0" style="-fx-border-color: white;">
+         <children>
+            <ImageView fx:id="imageorder" fitHeight="187.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="321.0" layoutY="23.0" styleClass="labelproduct" text="Tên sản phẩm:" />
+      <Label fx:id="nameproduct" layoutX="421.0" layoutY="23.0" prefHeight="21.0" prefWidth="167.0" styleClass="informationproduct" />
+      <Label layoutX="321.0" layoutY="94.0" styleClass="labelproduct" text="Loại:" />
+      <Label fx:id="typeproduct" layoutX="361.0" layoutY="95.0" prefHeight="17.0" prefWidth="223.0" styleClass="informationproduct" />
+      <Label layoutX="321.0" layoutY="158.0" styleClass="labelproduct" text="Kích cỡ:" />
+      <Label fx:id="size" layoutX="383.0" layoutY="158.0" prefHeight="21.0" prefWidth="124.0" styleClass="informationproduct" />
+      <Label layoutX="773.0" layoutY="23.0" styleClass="labelproduct" text="Giá tiền:" />
+      <Label layoutX="773.0" layoutY="158.0" prefHeight="21.0" prefWidth="74.0" styleClass="labelproduct" text="Số lượng:" />
+      <Label layoutX="517.0" layoutY="158.0" styleClass="labelproduct" text="Giới tính:" />
+      <Label fx:id="style" layoutX="368.0" layoutY="94.0" prefHeight="21.0" prefWidth="144.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="gender" layoutX="594.0" layoutY="158.0" prefHeight="21.0" prefWidth="107.0" styleClass="informationproduct" />
+      <Label fx:id="quantity" layoutX="847.0" layoutY="158.0" prefHeight="17.0" prefWidth="209.0" styleClass="informationproduct" />
+      <Label fx:id="price" layoutX="839.0" layoutY="23.0" prefHeight="17.0" prefWidth="209.0" styleClass="informationproduct" />
+      <Button layoutX="1165.0" layoutY="23.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" styleClass="order" text="Xác nhận đơn" />
+      <Button layoutX="1165.0" layoutY="110.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" styleClass="order" text="Không xác nhận" />
+      <Button layoutX="1165.0" layoutY="190.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" styleClass="order" text="Liên hệ người mua" />
+      <Label layoutX="773.0" layoutY="95.0" styleClass="labelproduct" text="Người mua:" />
+      <Label fx:id="buyer" layoutX="854.0" layoutY="95.0" prefHeight="21.0" prefWidth="307.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="222.0" styleClass="labelproduct" text="Địa chỉ:" />
+      <Label fx:id="address" layoutX="383.0" layoutY="222.0" prefHeight="21.0" prefWidth="704.0" styleClass="informationproduct" />
+      <Label layoutX="517.0" layoutY="100.0" styleClass="labelproduct" text="Tuổi:" />
+      <Label fx:id="age" layoutX="594.0" layoutY="100.0" prefHeight="21.0" prefWidth="107.0" styleClass="informationproduct" />
+   </children>
+</AnchorPane>

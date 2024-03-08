@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="742.0" prefWidth="1390.0" stylesheets="@homepage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerHomePage">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="771.0" fitWidth="1390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/4k-forest-7sfd6znw2ry6hnlt.png" />
+               </image>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ImageView>
+            <AnchorPane layoutY="118.0" prefHeight="632.0" prefWidth="1390.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="120.0" prefWidth="1390.0" styleClass="backgroundmenu">
+         <children>
+            <Label layoutX="58.0" layoutY="35.0" prefHeight="54.0" prefWidth="131.0" styleClass="logo" text="SACHI" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="171.0" layoutY="35.0" prefHeight="54.0" prefWidth="131.0" styleClass="logo" text="KIDS" textFill="#00ff0d">
+               <font>
+                  <Font name="Century Gothic" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="shop" focusTraversable="false" layoutX="580.0" layoutY="16.0" mnemonicParsing="false" onAction="#onshop" styleClass="menubutton" text="Cửa hàng" />
+            <Button fx:id="onproduct" focusTraversable="false" layoutX="684.0" layoutY="16.0" mnemonicParsing="false" onAction="#onproduct" styleClass="menubutton" text="Sản phẩm" />
+            <Button fx:id="home" focusTraversable="false" layoutX="479.0" layoutY="16.0" mnemonicParsing="false" onAction="#onhome" styleClass="menubutton" text="Trang chủ" />
+            <Button focusTraversable="false" layoutX="792.0" layoutY="16.0" mnemonicParsing="false" onAction="#onaccount" styleClass="menubutton" text="Tài khoản" />
+            <Button layoutX="901.0" layoutY="16.0" mnemonicParsing="false" onAction="#oncartS" styleClass="menubutton" text="Giỏ hàng" />
+            <Button focusTraversable="false" layoutX="1237.0" layoutY="41.0" mnemonicParsing="false" onAction="#exithomepage" styleClass="LogOut" text="Thoát" />
+            <Button focusTraversable="false" layoutX="1131.0" layoutY="41.0" mnemonicParsing="false" onAction="#logout" styleClass="LogOut" text="Đăng xuất" />
+            <Label focusTraversable="false" layoutX="1237.0" layoutY="33.0" prefHeight="54.0" prefWidth="7.0" text="|" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchproductinput" layoutX="472.0" layoutY="69.0" onKeyReleased="#inputkey" prefHeight="41.0" prefWidth="516.0" promptText="Tìm kiếm sản phẩm" styleClass="searchhome" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="wellcomescene" layoutY="122.0" prefHeight="632.0" prefWidth="1379.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="632.0" prefWidth="1390.0" text="WELLCOME" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="homescene" layoutY="120.0" prefHeight="632.0" prefWidth="1390.0" visible="false">
+         <children>
+            <ScrollPane fx:id="menuproduct" layoutX="22.0" layoutY="13.0" prefHeight="594.0" prefWidth="1325.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="shopscene" layoutY="119.0" prefHeight="632.0" prefWidth="1390.0" visible="false">
+         <children>
+            <AnchorPane fx:id="createshopbuttonacp" layoutX="52.0" layoutY="17.0" onMouseClicked="#createshoplabel" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+               <children>
+                  <Label layoutX="99.0" layoutY="19.0" prefHeight="39.0" prefWidth="157.0" text="Tạo cửa hàng" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/logocreateshop.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="createshop" layoutX="403.0" layoutY="55.0" prefHeight="538.0" prefWidth="943.0" styleClass="menushop" visible="false">
+               <children>
+                  <Label layoutX="386.0" layoutY="12.0" prefHeight="54.0" prefWidth="221.0" text="Cửa hàng mới" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Light" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="517.0" layoutY="467.0" onMouseClicked="#createnewshop" prefHeight="57.0" prefWidth="124.0" styleClass="productbutton" text="Tạo mới" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Light" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="125.0" prefHeight="30.0" prefWidth="148.0" styleClass="labelcreateshop" text="Tên cửa hàng:" />
+                  <TextField fx:id="nameshoptext" layoutX="227.0" layoutY="125.0" prefHeight="25.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                  <Label layoutX="57.0" layoutY="233.0" prefHeight="30.0" prefWidth="131.0" styleClass="labelcreateshop" text="Địa chỉ:" />
+                  <TextField fx:id="addressshoptext" layoutX="227.0" layoutY="225.0" prefHeight="25.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                  <Label layoutX="49.0" layoutY="337.0" prefHeight="30.0" prefWidth="131.0" styleClass="labelcreateshop" text="Số điện thoại: " />
+                  <TextField fx:id="phonenumbershoptext" layoutX="227.0" layoutY="329.0" prefHeight="25.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                  <Label layoutX="497.0" layoutY="123.0" prefHeight="30.0" prefWidth="148.0" styleClass="labelcreateshop" text="Email:" />
+                  <TextField fx:id="emailshoptext" layoutX="675.0" layoutY="123.0" prefHeight="25.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                  <Label layoutX="505.0" layoutY="231.0" prefHeight="30.0" prefWidth="148.0" styleClass="labelcreateshop" text="Ngày thành lập:" />
+                  <Label layoutX="497.0" layoutY="335.0" prefHeight="30.0" prefWidth="131.0" styleClass="labelcreateshop" text="Chủ sở hữu:" />
+                  <Label fx:id="nameowner" layoutX="675.0" layoutY="335.0" prefHeight="30.0" prefWidth="266.0" styleClass="labelcreateshop" />
+                  <Label fx:id="localdate" layoutX="669.0" layoutY="231.0" prefHeight="30.0" prefWidth="235.0" styleClass="labelcreateshop" />
+                  <Label layoutX="665.0" layoutY="467.0" onMouseClicked="#resetimformationshop" prefHeight="54.0" prefWidth="106.0" styleClass="productbutton" text="Đặt lại" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Light" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="797.0" layoutY="467.0" onMouseClicked="#exittabelcreateshop" prefHeight="57.0" prefWidth="99.0" styleClass="productbutton" text="Thoát" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Light" size="36.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="erroraddresslabelshop" alignment="CENTER_RIGHT" layoutX="236.0" layoutY="271.0" prefHeight="17.0" prefWidth="204.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="errornamelabelshop" alignment="CENTER_RIGHT" layoutX="236.0" layoutY="173.0" prefHeight="17.0" prefWidth="204.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="erroremaillabelshop" alignment="CENTER_RIGHT" layoutX="684.0" layoutY="173.0" prefHeight="17.0" prefWidth="204.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="errorphonenumberlabelshop" alignment="CENTER_RIGHT" layoutX="236.0" layoutY="375.0" prefHeight="17.0" prefWidth="204.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="createshoppass" layoutX="628.0" layoutY="375.0" prefHeight="17.0" prefWidth="260.0" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tableviewshop" layoutX="52.0" layoutY="231.0" prefHeight="363.0" prefWidth="308.0" styleClass="tablebuy">
+              <columns>
+                <TableColumn fx:id="idshop" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="nameshop" prefWidth="231.0" text="Tên cửa hàng" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="managershopbuttonacp" layoutX="52.0" layoutY="116.0" onMouseClicked="#managershoplabel" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+               <children>
+                  <Label layoutX="85.0" layoutY="19.0" prefHeight="39.0" prefWidth="221.0" text="Quản lý cửa hàng" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/research.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="managershop" layoutX="403.0" layoutY="55.0" prefHeight="538.0" prefWidth="943.0" styleClass="menushop" visible="false">
+               <children>
+                  <TextField fx:id="checkidshop" layoutX="384.0" layoutY="28.0" prefHeight="46.0" prefWidth="235.0" promptText="Nhập mã cửa hàng" styleClass="inputimformationshop" />
+                  <AnchorPane layoutX="33.0" layoutY="96.0" onMouseClicked="#updateinformationshop" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+                     <children>
+                        <Label layoutX="85.0" layoutY="19.0" prefHeight="39.0" prefWidth="221.0" text="Cập nhập thông tin" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/clipboard.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="33.0" layoutY="197.0" onMouseClicked="#deleteshop" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+                     <children>
+                        <Label layoutX="85.0" layoutY="19.0" prefHeight="39.0" prefWidth="221.0" text="Xóa cửa hàng" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/delete.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="orderproduct" layoutX="33.0" layoutY="300.0" onMouseClicked="#orderproductevent" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+                     <children>
+                        <Label layoutX="85.0" layoutY="19.0" prefHeight="39.0" prefWidth="221.0" text="Đơn hàng" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/consumer.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="showproduct" layoutX="33.0" layoutY="410.0" onMouseClicked="#showproduct" prefHeight="76.0" prefWidth="306.0" styleClass="menushop">
+                     <children>
+                        <Label layoutX="85.0" layoutY="19.0" prefHeight="39.0" prefWidth="221.0" text="Xem sản phẩm" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/box.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="errorlabelcheckidshop" alignment="CENTER_RIGHT" layoutX="395.0" layoutY="74.0" prefHeight="17.0" prefWidth="235.0" textFill="RED" />
+                  <Label fx:id="passlabelidcheckshop" alignment="CENTER_RIGHT" layoutX="384.0" layoutY="74.0" prefHeight="17.0" prefWidth="235.0" textFill="#00ff11" />
+                  <AnchorPane fx:id="updateinformationshop" layoutX="410.0" layoutY="96.0" prefHeight="426.0" prefWidth="516.0" styleClass="menushop" visible="false">
+                     <children>
+                        <TextField fx:id="updateaddress" layoutX="27.0" layoutY="140.0" prefHeight="39.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                        <TextField fx:id="updateemail" layoutX="27.0" layoutY="226.0" prefHeight="39.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                        <TextField fx:id="updatenameshop" layoutX="268.0" layoutY="56.0" prefHeight="39.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                        <TextField fx:id="updatephonenumber" layoutX="268.0" layoutY="140.0" prefHeight="39.0" prefWidth="221.0" styleClass="inputimformationshop" />
+                        <Button layoutX="403.0" layoutY="377.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="91.0" styleClass="menubutton" text="Thoát" />
+                        <Button layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#updateshop" prefHeight="39.0" prefWidth="141.0" styleClass="menubutton" text="Cập nhập" />
+                        <Button layoutX="306.0" layoutY="377.0" mnemonicParsing="false" onAction="#resetupdate" prefHeight="39.0" prefWidth="106.0" styleClass="menubutton" text="Đặt lại" />
+                        <Label layoutX="43.0" layoutY="23.0" prefHeight="17.0" prefWidth="51.0" text="Id:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="23.0" prefHeight="27.0" prefWidth="176.0" text="Tên cửa hàng:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="113.0" prefHeight="27.0" prefWidth="176.0" text="Địa chỉ:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="113.0" prefHeight="27.0" prefWidth="176.0" text="Số điện thoại:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="37.0" layoutY="200.0" prefHeight="27.0" prefWidth="176.0" text="Email:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="283.0" prefHeight="27.0" prefWidth="176.0" text="Số sản phẩm:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="37.0" layoutY="283.0" prefHeight="27.0" prefWidth="176.0" text="Ngày thành lập:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="278.0" layoutY="200.0" prefHeight="27.0" prefWidth="176.0" text="Chủ cửa hàng:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="updatenumberproduct" layoutX="277.0" layoutY="323.0" prefHeight="30.0" prefWidth="204.0" text="34" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="updatenameowner" layoutX="278.0" layoutY="234.0" prefHeight="30.0" prefWidth="204.0" text="TRINH QUYET CHIEN" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="updatedatestart" layoutX="36.0" layoutY="323.0" prefHeight="30.0" prefWidth="204.0" text="2023-09-12 23:15:59" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="updateidshop" layoutX="36.0" layoutY="56.0" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelupdate" layoutX="278.0" layoutY="353.0" prefHeight="17.0" prefWidth="235.0" textFill="#00ff11" />
+                     </children></AnchorPane>
+                  <TableView fx:id="tabelviewinshop" layoutX="413.0" layoutY="91.0" prefHeight="426.0" prefWidth="491.0" visible="false">
+                    <columns>
+                      <TableColumn fx:id="idproductinshop" prefWidth="55.0" text="Id" />
+                      <TableColumn fx:id="nameproductinshop" prefWidth="224.0" text="Tên sản phẩm" />
+                        <TableColumn fx:id="priceproductinshop" minWidth="0.0" prefWidth="108.0" text="Giá" />
+                        <TableColumn fx:id="quantityproductinshop" minWidth="0.0" prefWidth="103.0" text="Số lượng" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="orderproductlist" prefHeight="614.0" prefWidth="1390.0" visible="false">
+               <children>
+                  <ScrollPane fx:id="ordermenu" layoutX="-1.0" prefHeight="571.0" prefWidth="1390.0" />
+                  <Button layoutX="1219.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#exitorderproduct" prefHeight="17.0" prefWidth="104.0" styleClass="menucreateshop" text="Thoát" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="productscene" layoutY="121.0" prefHeight="632.0" prefWidth="1390.0" visible="false">
+         <children>
+            <TableView fx:id="tabelviewproduct" layoutX="26.0" layoutY="20.0" onMouseClicked="#getinformationproductfromtabe" prefHeight="239.0" prefWidth="757.0" styleClass="tablebuy">
+              <columns>
+                <TableColumn fx:id="idproduct" prefWidth="53.0" text="Id" />
+                <TableColumn fx:id="nameproduct" prefWidth="158.0" text="Tên sản phẩm" />
+                  <TableColumn fx:id="genderproduct" prefWidth="82.0" text="Giới tính" />
+                  <TableColumn fx:id="ageproduct" prefWidth="78.0" text="Tuổi" />
+                  <TableColumn fx:id="sizeproduct" prefWidth="58.0" text="Kich cỡ" />
+                  <TableColumn fx:id="styleproduct" prefWidth="70.0" text="Loại" />
+                  <TableColumn fx:id="nameshopproduct" prefWidth="96.0" text="shop" />
+                  <TableColumn fx:id="priceproduct" minWidth="0.0" prefWidth="101.0" text="Giá (VND)" />
+                  <TableColumn fx:id="quantityproduct" prefWidth="59.0" text="Số lượng" />
+              </columns>
+            </TableView>
+            <AnchorPane fx:id="menuaddbutton" layoutX="26.0" layoutY="280.0" prefHeight="334.0" prefWidth="1325.0" styleClass="menushop" visible="false">
+               <children>
+                  <Button layoutX="1197.0" layoutY="276.0" mnemonicParsing="false" onAction="#exitproduct" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Thoát" />
+                  <Button layoutX="1074.0" layoutY="276.0" mnemonicParsing="false" onAction="#resetinormationproduct" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Đặt lại" />
+                  <Button layoutX="951.0" layoutY="276.0" mnemonicParsing="false" onAction="#addproduct" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Thêm" />
+                  <Label layoutX="806.0" layoutY="165.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Tên sản phẩm:" />
+                  <TextField fx:id="nameproductinput" layoutX="951.0" layoutY="160.0" prefHeight="17.0" prefWidth="260.0" styleClass="searchhome" />
+                  <Label layoutX="849.0" layoutY="100.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Giá (VND):" />
+                  <TextField fx:id="priceproductinput" layoutX="951.0" layoutY="95.0" prefHeight="17.0" prefWidth="260.0" promptText="VND" styleClass="searchhome" />
+                  <Label layoutX="382.0" layoutY="220.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Giới tính:" />
+                  <Label layoutX="382.0" layoutY="150.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Kích cỡ:" />
+                  <Label layoutX="374.0" layoutY="85.0" prefHeight="30.0" prefWidth="148.0" styleClass="labelcustompurchase" text="Loại sản phẩm:" />
+                  <Label layoutX="382.0" layoutY="28.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Người bán:" />
+                  <Label layoutX="849.0" layoutY="229.0" prefHeight="30.0" prefWidth="101.0" styleClass="labelcustompurchase" text="Cửa hàng:" />
+                  <Label fx:id="ownerproductlabel" layoutX="523.0" layoutY="28.0" prefHeight="30.0" prefWidth="260.0" styleClass="labelcustompurchase" />
+                  <Label layoutX="849.0" layoutY="28.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Số lượng:" />
+                  <TextField fx:id="quantityproductinput" layoutX="951.0" layoutY="23.0" prefHeight="17.0" prefWidth="260.0" styleClass="searchhome" />
+                  <Button fx:id="choiceimagebutton" layoutX="124.0" layoutY="253.0" mnemonicParsing="false" onAction="#choiceImage" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Chọn" />
+                  <AnchorPane layoutX="17.0" layoutY="29.0" prefHeight="202.0" prefWidth="329.0" styleClass="menushop">
+                     <children>
+                        <ImageView fx:id="imageproduct" fitHeight="187.0" fitWidth="256.0" layoutX="37.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <MenuButton fx:id="choicestyle" layoutX="527.0" layoutY="84.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Loại sản phẩm">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#stylequan" text="Quần" />
+                      <MenuItem mnemonicParsing="false" onAction="#slyteao" text="Áo" />
+                        <MenuItem mnemonicParsing="false" onAction="#slytebo" text="Đồ bộ" />
+                        <MenuItem mnemonicParsing="false" onAction="#slytephukien" text="Phụ kiện" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylemu" text="Mũ" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylegiay" text="Giày dép" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylevay" text="Váy" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton fx:id="choicegender" layoutX="527.0" layoutY="223.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Giới tính">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gendernam" text="Nam" />
+                        <MenuItem mnemonicParsing="false" onAction="#gendernu" text="Nữ" />
+                        <MenuItem mnemonicParsing="false" onAction="#genderkhac" text="Khác" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="choicesize" layoutX="527.0" layoutY="153.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Kích cỡ">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#sizes" text="S" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizem" text="M" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizel" text="L" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizexl" text="XL" />
+                     </items>
+                  </MenuButton>
+                  <Label layoutX="382.0" layoutY="288.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Độ tuổi:" />
+                  <MenuButton fx:id="choiceage" layoutX="527.0" layoutY="291.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Độ tuổi">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#age1" text="0-1 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#age5" text="1 -5 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#age10" text="5 - 10 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#agetren10" text="trên 10 tuổi" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="shopproductinput" layoutX="951.0" layoutY="224.0" prefHeight="17.0" prefWidth="260.0" promptText="Tên cửa hàng" styleClass="searchhome" />
+                  <Label fx:id="errorproduct" layoutX="962.0" layoutY="201.0" prefHeight="17.0" prefWidth="235.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="passerrorproduct" layoutX="964.0" layoutY="201.0" prefHeight="17.0" prefWidth="235.0" textFill="#00ff04" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="822.0" layoutY="50.0" mnemonicParsing="false" onAction="#insertproductbutton" prefHeight="39.0" prefWidth="176.0" styleClass="productbutton" text="Thêm sản phẩm" />
+            <Button layoutX="910.0" layoutY="130.0" mnemonicParsing="false" onAction="#updateinformationproduct" prefHeight="46.0" prefWidth="344.0" styleClass="productbutton" text="Cập nhập thông tin sản phẩm" />
+            <Button layoutX="1174.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#delectproduct" prefHeight="39.0" prefWidth="176.0" styleClass="productbutton" text="Xóa sản phẩm" />
+            <TextField fx:id="inputproductkey" layoutX="822.0" layoutY="216.0" onKeyReleased="#inputproductkeylistens" prefHeight="27.0" prefWidth="399.0" promptText="Tìm Kiếm sản phẩm" styleClass="searchhome" />
+            <AnchorPane fx:id="menuaddbuttonupdate" layoutX="26.0" layoutY="280.0" prefHeight="334.0" prefWidth="1325.0" styleClass="menushop" visible="false">
+               <children>
+                  <Button layoutX="1197.0" layoutY="276.0" mnemonicParsing="false" onAction="#exitproductupdate" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Thoát" />
+                  <Button layoutX="1074.0" layoutY="276.0" mnemonicParsing="false" onAction="#resetinormationproductupdate" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Đặt lại" />
+                  <Button layoutX="951.0" layoutY="276.0" mnemonicParsing="false" onAction="#updateproduct" prefHeight="46.0" prefWidth="114.0" styleClass="custompurchasebutton" text="Cập nhập" />
+                  <Label layoutX="806.0" layoutY="165.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Tên sản phẩm:" />
+                  <TextField fx:id="nameproductinputupdate" layoutX="951.0" layoutY="160.0" prefHeight="17.0" prefWidth="260.0" styleClass="searchhome" />
+                  <Label layoutX="849.0" layoutY="100.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Giá (VND):" />
+                  <TextField fx:id="priceproductinputupdate" layoutX="951.0" layoutY="95.0" prefHeight="17.0" prefWidth="260.0" promptText="VND" styleClass="searchhome" />
+                  <Label layoutX="382.0" layoutY="220.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Giới tính:" />
+                  <Label layoutX="382.0" layoutY="150.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Kích cỡ:" />
+                  <Label layoutX="374.0" layoutY="85.0" prefHeight="30.0" prefWidth="148.0" styleClass="labelcustompurchase" text="Loại sản phẩm:" />
+                  <Label layoutX="382.0" layoutY="28.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Người bán:" />
+                  <Label layoutX="849.0" layoutY="229.0" prefHeight="30.0" prefWidth="101.0" styleClass="labelcustompurchase" text="Cửa hàng:" />
+                  <Label fx:id="ownerproductlabelupdate" layoutX="523.0" layoutY="28.0" prefHeight="30.0" prefWidth="260.0" styleClass="labelcustompurchase" />
+                  <Label layoutX="849.0" layoutY="28.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Số lượng:" />
+                  <TextField fx:id="quantityproductinputupdate" layoutX="951.0" layoutY="23.0" prefHeight="17.0" prefWidth="260.0" styleClass="searchhome" />
+                  <Button fx:id="choiceimagebuttonupdate" layoutX="98.0" layoutY="253.0" mnemonicParsing="false" onAction="#choiceImageupdate" prefHeight="46.0" prefWidth="167.0" styleClass="custompurchasebutton" text="Cập nhập ảnh" />
+                  <AnchorPane layoutX="17.0" layoutY="29.0" prefHeight="202.0" prefWidth="329.0" styleClass="menushop">
+                     <children>
+                        <ImageView fx:id="imageproductupdate" fitHeight="187.0" fitWidth="256.0" layoutX="37.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <MenuButton fx:id="choicestyleupdate" layoutX="527.0" layoutY="84.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Loại sản phẩm">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#stylequanupdate" text="Quần" />
+                        <MenuItem mnemonicParsing="false" onAction="#slyteaoupdate" text="Áo" />
+                        <MenuItem mnemonicParsing="false" onAction="#slyteboupdate" text="Đồ bộ" />
+                        <MenuItem mnemonicParsing="false" onAction="#slytephukienupdate" text="Phụ kiện" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylemuupdate" text="Mũ" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylegiayupdate" text="Giày dép" />
+                        <MenuItem mnemonicParsing="false" onAction="#stylevayupdate" text="Váy" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="choicegenderupdate" layoutX="527.0" layoutY="223.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Giới tính">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#gendernamupdate" text="Nam" />
+                        <MenuItem mnemonicParsing="false" onAction="#gendernuupdate" text="Nữ" />
+                        <MenuItem mnemonicParsing="false" onAction="#genderkhacupdate" text="Khác" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="choicesizeupdate" layoutX="527.0" layoutY="153.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Kích cỡ">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#sizesupdate" text="S" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizemupdate" text="M" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizelupdate" text="L" />
+                        <MenuItem mnemonicParsing="false" onAction="#sizexlupdate" text="XL" />
+                     </items>
+                  </MenuButton>
+                  <Label layoutX="382.0" layoutY="288.0" prefHeight="27.0" prefWidth="131.0" styleClass="labelcustompurchase" text="Độ tuổi:" />
+                  <MenuButton fx:id="choiceageupdate" layoutX="527.0" layoutY="291.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="251.0" styleClass="choiceproduct" text="Độ tuổi">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#age1update" text="0-1 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#age5update" text="1 -5 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#age10update" text="5 - 10 tuổi" />
+                        <MenuItem mnemonicParsing="false" onAction="#agetren10update" text="trên 10 tuổi" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="shopproductinputupdate" layoutX="951.0" layoutY="224.0" prefHeight="17.0" prefWidth="260.0" promptText="Tên cửa hàng" styleClass="searchhome" />
+                  <Label fx:id="errorproduct1" layoutX="962.0" layoutY="201.0" prefHeight="17.0" prefWidth="235.0" styleClass="errorlabelcreateshop" />
+                  <Label fx:id="passerrorproduct1" layoutX="964.0" layoutY="201.0" prefHeight="17.0" prefWidth="235.0" textFill="#00ff04" />
+                  <Label fx:id="errorupdateproduct" alignment="CENTER_RIGHT" layoutX="812.0" layoutY="295.0" prefHeight="17.0" prefWidth="131.0" textFill="RED" />
+                  <Label fx:id="passupdateproduct" alignment="CENTER_RIGHT" layoutX="812.0" layoutY="298.0" prefHeight="17.0" prefWidth="131.0" textFill="#11ff00" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="errorchoiceproduct" alignment="CENTER_RIGHT" layoutX="925.0" layoutY="176.0" prefHeight="17.0" prefWidth="308.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="accountscene" layoutY="120.0" prefHeight="632.0" prefWidth="1390.0" visible="false">
+         <children>
+            <AnchorPane layoutX="128.0" layoutY="76.0" onMouseClicked="#oninformationuser" prefHeight="200.0" prefWidth="491.0" styleClass="menucreateshop">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="19.0" prefHeight="180.0" prefWidth="329.0" text="Thông tin cá nhân" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="deleteuseraccount" layoutX="778.0" layoutY="357.0" prefHeight="200.0" prefWidth="491.0" styleClass="menucreateshop">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="10.0" prefHeight="180.0" prefWidth="329.0" text="Xóa tài khoản" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="changepassworduser" layoutX="128.0" layoutY="357.0" prefHeight="200.0" prefWidth="491.0" styleClass="menucreateshop">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="10.0" prefHeight="180.0" prefWidth="329.0" text="Đổi  mật khẩu" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menuuserinformation" layoutX="647.0" layoutY="25.0" prefHeight="584.0" prefWidth="715.0" styleClass="menushop" visible="false">
+               <children>
+                  <Button layoutX="601.0" layoutY="524.0" mnemonicParsing="false" onAction="#exitmenuuser" prefHeight="31.0" prefWidth="91.0" styleClass="menucreateshop" text="Thoát" />
+                  <Button layoutX="342.0" layoutY="524.0" mnemonicParsing="false" onAction="#updateuserinformation" prefHeight="31.0" prefWidth="131.0" styleClass="menucreateshop" text="Cập nhập" />
+                  <Label layoutX="251.0" layoutY="29.0" prefHeight="35.0" prefWidth="213.0" text="Thông tin tài khoản" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="97.0" prefHeight="30.0" prefWidth="39.0" styleClass="informationshoplabel" text="Tên:" />
+                  <Label layoutX="46.0" layoutY="171.0" prefHeight="30.0" prefWidth="141.0" styleClass="informationshoplabel" text="Số điện thoại:" />
+                  <TextField fx:id="phonenumberueserupdate" layoutX="199.0" layoutY="163.0" prefHeight="46.0" prefWidth="477.0" styleClass="inputimformationshop" />
+                  <Label layoutX="46.0" layoutY="243.0" prefHeight="30.0" prefWidth="91.0" styleClass="informationshoplabel" text="Giới tính:" />
+                  <TextField fx:id="genderuserupdate" layoutX="137.0" layoutY="235.0" prefHeight="46.0" prefWidth="540.0" styleClass="inputimformationshop" />
+                  <Label layoutX="46.0" layoutY="317.0" prefHeight="30.0" prefWidth="51.0" styleClass="informationshoplabel" text="Tuổi:" />
+                  <TextField fx:id="ageuserupdate" layoutX="109.0" layoutY="309.0" prefHeight="46.0" prefWidth="569.0" styleClass="inputimformationshop" />
+                  <Label layoutX="46.0" layoutY="463.0" prefHeight="30.0" prefWidth="70.0" styleClass="informationshoplabel" text="Địa chỉ:" />
+                  <TextField fx:id="addressuserupdate" layoutX="116.0" layoutY="455.0" prefHeight="46.0" prefWidth="559.0" styleClass="inputimformationshop" />
+                  <Label layoutX="46.0" layoutY="389.0" prefHeight="30.0" prefWidth="58.0" styleClass="informationshoplabel" text="Email:" />
+                  <Button layoutX="492.0" layoutY="524.0" mnemonicParsing="false" onAction="#repeart" prefHeight="31.0" prefWidth="91.0" styleClass="menucreateshop" text="Đặt lại" />
+                  <Label fx:id="passlabeluser" alignment="CENTER_RIGHT" layoutX="464.0" layoutY="501.0" prefHeight="17.0" prefWidth="204.0" textFill="#00ff09" />
+                  <Label fx:id="emailuserupdate" layoutX="117.0" layoutY="389.0" prefHeight="30.0" prefWidth="372.0" styleClass="informationshoplabel" />
+                  <Label fx:id="nameuserupdate" layoutX="127.0" layoutY="97.0" prefHeight="30.0" prefWidth="516.0" styleClass="informationshoplabel" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="cartscene" layoutX="10.0" layoutY="130.0" prefHeight="626.0" prefWidth="1379.0" visible="false">
+         <children>
+            <ScrollPane fx:id="menucart" prefHeight="626.0" prefWidth="1379.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

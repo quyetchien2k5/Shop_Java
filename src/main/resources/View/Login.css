@@ -1,0 +1,12 @@
+.LoginButton{
+    -fx-background-color: #3679c5;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+.LoginButton:hover{
+    -fx-font-size: 18px;
+}
+.errorlabel{
+    -fx-text-fill: red;
+}
+
